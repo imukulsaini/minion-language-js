@@ -6,11 +6,6 @@ var translatedButton = document.querySelector("#translateButton");
 
 var serverUrl = "https://api.funtranslations.com/translate/navi.json";
 
-
-
-function clickHandler(){
-    fetchHandler()
-}
 function urlHandler (text){
 
 return serverUrl +"?" + "text=" + text;
@@ -23,7 +18,6 @@ return serverUrl +"?" + "text=" + text;
 function fetchHandler(){
 
 var translateInput = inputText.value;
-console.log("transleate input =  "+ translateInput)
 
 fetch(urlHandler(translateInput)).then(response => response.json ()).then( 
     json =>
@@ -40,4 +34,4 @@ fetch(urlHandler(translateInput)).then(response => response.json ()).then(
 }
 
 
-translatedButton.addEventListener("click" , clickHandler);
+translatedButton.addEventListener("click" , fetchHandler);
