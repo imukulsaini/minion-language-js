@@ -4,7 +4,7 @@ var inputText = document.querySelector(".textInput");
 var outputText = document.querySelector(".textOutput");
 var translatedButton = document.querySelector("#translateButton");
 
-var serverUrl = "https://api.funtranslations.com/translate/navi.json";
+var serverUrl = "https://api.funtranslations.com/translate/minion.json";
 
 function urlHandler (text){
 
@@ -23,7 +23,7 @@ fetch(urlHandler(translateInput)).then(response => response.json ()).then(
     json =>
     { 
         console.log(json)
-         var translateOutput = json.contents.text;
+         var translateOutput = json.contents.translated;
          console.log("outputText = " + translateOutput)
          //output
          outputText.innerText = translateOutput; 
